@@ -1,7 +1,8 @@
 clean:
 	rm -rf storybook-static
-	rm -rf dist
+	rm -rf dist target
 	mkdir -p dist
+	touch dist/.gitkeep
 
 #
 # apollo type generation
@@ -27,5 +28,19 @@ html-pages:
 #
 # Dev Server
 #
-run-dev: html-pages
+.PHONY: run-webpack-dev
+run-webpack-dev: html-pages
 	npx webpack-dev-server --config webpack.js
+
+.PHONY: run-graphql-service
+run-graphql-service: build-no-test
+	java -jar target/paramPropertyDemo-1.0-SNAPSHOT.jar
+
+KOTLIN_SOURCES:= $(wildcard ./src/%)
+KOTLIN_RESOURCES:= $(wildcard ./resources/%)
+
+target/paramPropertyDemo-1.0-SNAPSHOT.jar: $(KOTLIN_SOURCES) $(KOTLIN_RESOURCES) pom.xml
+	mvn package -Dmaven.test.skip=true
+
+.PHONY: build-no-test
+build-no-test: target/paramPropertyDemo-1.0-SNAPSHOT.jar

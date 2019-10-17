@@ -1,3 +1,8 @@
 /node_modules
 /dist/*
 /package-lock.json
+/target/
+/.classpath
+/.project
+/.settings/
+/logs/gateway.log
