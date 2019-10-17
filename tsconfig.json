@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "strictNullChecks": true,
+    "outDir": "./build",
+  },
+  "include": [
+    "./src-ui/**/*.ts",
+    "./src-ui/**/*.tsx"
+  ],
+  "exclude": [
+    "./node_modules/**/*"
+  ]
+}

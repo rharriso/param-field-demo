@@ -1,0 +1,25 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended",
+        "tslint-react"
+    ],
+    "jsRules": {},
+    "rules": {
+        "quotemark": [true, "single", "jsx-double"],
+        "interface-name": [true, "never-prefix"],
+        "lines-between-class-members": true,
+        "import-spacing": false,
+        "jsx-alignment": true,
+        "jsx-no-multiline-js": false,
+        "no-unused-variable": true,
+        "object-literal-sort-keys": false,
+        "trailing-comma": [true, "never"],
+        "no-console": false,
+        "no-unused-expression": [true, "allow-fast-null-checks"],
+        "import-blacklist": [true, "lodash", "@material-ui/core", "@material-ui/icons", "@material-ui/styles"]
+    },
+    "rulesDirectory": [
+        "node_modules/tslint-lines-between-class-members"
+    ]
+}
