@@ -11,10 +11,10 @@ clean:
 apollo-generate:
 	npx apollo client:codegen \
 		--excludes=node_modules/* \
-		--excludes=src/**/*.stories.* \
-		--includes=src/**/*.ts* \
+		--excludes=src-ui/**/*.stories.* \
+		--includes=src-ui/**/*.ts* \
 		--target=typescript \
-		--endpoint=http://vapormail.local:3000/graphql \
+		--endpoint=http://vapormail.local:5000/graphql \
 		--outputFlat \
 		src-ui/schemaTypes
 
