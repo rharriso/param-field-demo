@@ -1,4 +1,4 @@
-# Kotlin Graphql Parameterized Property Demo
+# Kotlin Graphql Parameterized Field Demo
 
 To run:
 
