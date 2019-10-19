@@ -33,7 +33,7 @@ static-files:
 # Dev Server
 #
 .PHONY: run-webpack-dev
-run-webpack-dev: html-pages
+run-webpack-dev: html-pages static-files
 	npx webpack-dev-server --config webpack.js
 
 .PHONY: run-graphql-service
