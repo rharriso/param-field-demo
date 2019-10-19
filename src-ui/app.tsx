@@ -6,9 +6,10 @@ import { ApolloProvider, Query } from 'react-apollo';
 import apolloClient from 'src-ui/apolloClient';
 import gql from 'graphql-tag';
 import { imageQuery, imageQueryVariables } from './schemaTypes/imageQuery';
+import { ImageSize } from './schemaTypes/globalTypes';
 
 const imageQueryGQL = gql`
-query imageQuery  ($imageSize: String){
+query imageQuery  ($imageSize: ImageSize){
  	fetchImage (imageSize: $imageSize){
  	  title
  	  url
@@ -16,10 +17,12 @@ query imageQuery  ($imageSize: String){
 }
 `;
 
-class AppRoot extends React.Component {
+class AppRoot extends React.Component<{}, { imageSize: ImageSize}> {
+  public state = { imageSize: ImageSize.small }
+
   public render() {
     return (
-      <Query<imageQuery, imageQueryVariables> query={imageQueryGQL} variables={{ imageSize: 'small' }}>
+      <Query<imageQuery, imageQueryVariables> query={imageQueryGQL} variables={{ imageSize: this.state.imageSize }}>
         {({ loading, data }) => {
           if (loading) {
             return <h1>Loading</h1>;
@@ -33,13 +36,18 @@ class AppRoot extends React.Component {
 
           return (
             <React.Fragment>
-              <img src={url} alt={title} />
+              <img src={url} alt={title} onClick={this.toggleImageSize} />
               <h2>{title}</h2>
             </React.Fragment>
           )
         }}
       </Query>
     );
+  }
+
+  private toggleImageSize = () => {
+    const newImageSize = this.state.imageSize == ImageSize.small ? ImageSize.original : ImageSize.small;
+    this.setState({ imageSize: newImageSize });
   }
 }
 const App = () => (
