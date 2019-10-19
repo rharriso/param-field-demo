@@ -5,11 +5,11 @@ import { ApolloProvider, Query } from 'react-apollo';
 
 import apolloClient from 'src-ui/apolloClient';
 import gql from 'graphql-tag';
-import { imageQuery } from './schemaTypes/imageQuery';
+import { imageQuery, imageQueryVariables } from './schemaTypes/imageQuery';
 
 const imageQueryGQL = gql`
-query imageQuery {
- 	fetchImage {
+query imageQuery  ($imageSize: String){
+ 	fetchImage (imageSize: $imageSize){
  	  title
  	  url
  	}
@@ -19,7 +19,7 @@ query imageQuery {
 class AppRoot extends React.Component {
   public render() {
     return (
-      <Query<imageQuery> query={imageQueryGQL}>
+      <Query<imageQuery, imageQueryVariables> query={imageQueryGQL} variables={{ imageSize: 'small' }}>
         {({ loading, data }) => {
           if (loading) {
             return <h1>Loading</h1>;

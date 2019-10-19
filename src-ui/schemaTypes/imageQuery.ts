@@ -15,3 +15,7 @@ export interface imageQuery_fetchImage {
 export interface imageQuery {
   fetchImage: imageQuery_fetchImage;
 }
+
+export interface imageQueryVariables {
+  imageSize?: string | null;
+}
