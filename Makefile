@@ -25,6 +25,10 @@ apollo-generate:
 html-pages:
 	cp src-ui/index.html dist/index.html
 
+.PHONY: static-files
+static-files:
+	cp -r static dist/
+
 #
 # Dev Server
 #
