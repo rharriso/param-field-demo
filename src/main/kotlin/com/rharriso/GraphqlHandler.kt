@@ -15,9 +15,10 @@ import javax.xml.ws.http.HTTPException
 
 class GraphQLHandler {
     companion object {
-        private val config = SchemaGeneratorConfig(supportedPackages = listOf("nyc.rowan"))
+        private val config = SchemaGeneratorConfig(supportedPackages = listOf("com.rharriso"))
         private val queries = listOf(
-                TopLevelObject(HelloQueryService())
+                TopLevelObject(HelloQueryService()),
+                TopLevelObject(ImageQueryService())
         )
 
         private val mutations: List<TopLevelObject> = listOf()
