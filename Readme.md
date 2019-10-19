@@ -3,14 +3,9 @@
 To run:
 
 ```bash
-make run-dev
+make -j2 run-graphql-service run-webpack-dev
 ```
 
 Then navigate to: http://localhost:9000/
 
-Click different buttons to see different images loaded from the query.
-
-## TODO
-
-* [ ] Display From Graphql Result url
-* [ ] Clicking buttons to changes which image will be displayed
+Click on the image to see different sizes load.
