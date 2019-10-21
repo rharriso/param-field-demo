@@ -1,6 +1,8 @@
 # Kotlin Graphql Parameterized Field Demo
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/i_CYp-TE7XE/0.jpg)](https://www.youtube.com/watch?v=i_CYp-TE7XE)
+Code for below video
+
+![Video Link](https://img.youtube.com/vi/i_CYp-TE7XE/0.jpg)](https://www.youtube.com/watch?v=i_CYp-TE7XE)
 
 To run:
 
