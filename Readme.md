@@ -1,6 +1,6 @@
 # Kotlin Graphql Parameterized Field Demo
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/i_CYp-TE7XE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/i_CYp-TE7XE/0.jpg)](https://www.youtube.com/watch?v=i_CYp-TE7XE)
 
 To run:
 
