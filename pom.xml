@@ -7,7 +7,7 @@
     <name>Parameterized Field Demo</name>
 
     <groupId>com.rharriso</groupId>
-    <artifactId>paramPropertyDemo</artifactId>
+    <artifactId>paramFieldDemo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

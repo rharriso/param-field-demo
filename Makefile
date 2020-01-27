@@ -38,13 +38,13 @@ run-webpack-dev: html-pages static-files
 
 .PHONY: run-graphql-service
 run-graphql-service: build-no-test
-	java -jar target/paramPropertyDemo-1.0-SNAPSHOT.jar
+	java -jar target/paramFieldDemo-1.0-SNAPSHOT.jar
 
 KOTLIN_SOURCES:= $(wildcard ./src/%)
 KOTLIN_RESOURCES:= $(wildcard ./resources/%)
 
-target/paramPropertyDemo-1.0-SNAPSHOT.jar: $(KOTLIN_SOURCES) $(KOTLIN_RESOURCES) pom.xml
+target/paramFieldDemo-1.0-SNAPSHOT.jar: $(KOTLIN_SOURCES) $(KOTLIN_RESOURCES) pom.xml
 	mvn package -Dmaven.test.skip=true
 
 .PHONY: build-no-test
-build-no-test: target/paramPropertyDemo-1.0-SNAPSHOT.jar
+build-no-test: target/paramFieldDemo-1.0-SNAPSHOT.jar
